@@ -1,3 +1,3 @@
 [submodule "Xlnt4UE4/ThirdParty/xlnt"]
 	path = Xlnt4UE4/ThirdParty/xlnt
-	url = https://github.com/mattf06/xlnt.git
+	url = https://github.com/tfussell/xlnt.git
