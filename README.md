@@ -14,3 +14,4 @@ This project use xlnt as sub-module. To compile xlnt4UE4 you have to build xlnt 
 **TODO:**
 - finalize read access
 - add write/create support
+- direct import from xlsx to DataTable type
