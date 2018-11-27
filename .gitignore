@@ -48,7 +48,7 @@
 SourceArt/**/*.png
 SourceArt/**/*.tga
 
-# Binary Files
+# Binary Files 
 Binaries/*
 Plugins/*/Binaries/*
 
@@ -75,3 +75,17 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+# exclude generated files
+Xlnt4UE4/Thirdparty/xlnt
+Xlnt4UE4/Thirdparty/xlnt/CMakeFiles
+Xlnt4UE4/Thirdparty/xlnt/.git
+Xlnt4UE4/Thirdparty/xlnt/cmake_install.cmake
+Xlnt4UE4/Thirdparty/xlnt/*.vcxproj
+Xlnt4UE4/Thirdparty/xlnt/*.vcxproj.filters
+Xlnt4UE4/Thirdparty/xlnt/*.sln
+Xlnt4UE4/Thirdparty/xlnt/installed
+Xlnt4UE4/Thirdparty/xlnt/.vs
+Xlnt4UE4/Thirdparty/xlnt/x64
+
+
