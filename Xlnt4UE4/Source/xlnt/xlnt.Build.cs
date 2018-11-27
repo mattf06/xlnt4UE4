@@ -1,6 +1,7 @@
 // Some copyright should be here...
 
 using UnrealBuildTool;
+using System;
 using System.IO;
 
 public class xlnt : ModuleRules
@@ -28,6 +29,9 @@ public class xlnt : ModuleRules
     public xlnt(ReadOnlyTargetRules Target) : base(Target)
     {
         Type = ModuleType.External;
+
+        Console.WriteLine("ModulePath: " + ModulePath);
+        Console.WriteLine("ThirdPartyPath: " + ThirdPartyPath);
 
         if (Target.Platform == UnrealTargetPlatform.Win64)
         {
