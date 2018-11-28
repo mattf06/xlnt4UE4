@@ -7,22 +7,11 @@ using System.IO;
 public class xlnt : ModuleRules
 {
 
-    private string ModulePath
-    {
-        get
-        {
-            //return Path.GetDirectoryName(RulesCompiler.GetModuleFilename(this.GetType().Name));
-            string ModuleFilename = UnrealBuildTool.RulesCompiler.GetFileNameFromType(GetType());
-            string ModuleBaseDirectory = Path.GetDirectoryName(ModuleFilename);
-            return ModuleBaseDirectory;
-        }
-    }
-
     private string ThirdPartyPath
     {
         get
         {
-            return Path.GetFullPath(Path.Combine(ModulePath, "../../ThirdParty/xlnt/installed"));
+            return Path.GetFullPath(Path.Combine(PluginDirectory, "ThirdParty/xlnt/installed"));
         }
     }
 
@@ -30,8 +19,8 @@ public class xlnt : ModuleRules
     {
         Type = ModuleType.External;
 
-        Console.WriteLine("ModulePath: " + ModulePath);
         Console.WriteLine("ThirdPartyPath: " + ThirdPartyPath);
+        Console.WriteLine("PluginDirectory: " + PluginDirectory);
 
         if (Target.Platform == UnrealTargetPlatform.Win64)
         {
@@ -48,11 +37,11 @@ public class xlnt : ModuleRules
 
             if (bDebug)
             {
-                libs = new string[] { LibDir + "/xlntd.lib" /*, LibDir + "/libstudxmld.lib"*/ };
+                libs = new string[] { LibDir + "/xlntd.lib" };
             }
             else
             {
-                libs = new string[] { LibDir + "/xlnt.lib" /*, LibDir + "/libstudxml.lib"*/ };
+                libs = new string[] { LibDir + "/xlnt.lib" };
             }
 
             foreach (string lib in libs)
@@ -71,7 +60,7 @@ public class xlnt : ModuleRules
             PrivateIncludePaths.AddRange(
                 new string[] {
 				// ... add other private include paths required here ...
-                ThirdPartyPath + "/include",
+                Path.Combine(ThirdPartyPath, "include"),
                 }
                 );
 
